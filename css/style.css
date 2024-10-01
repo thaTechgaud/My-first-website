@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fdf2e9;
+    background-color: #D6F8D6;
 
     /* Because we want header to be sticky later */
     height: 9.6rem;
@@ -15,7 +15,17 @@
 }
 
 .logo {
-    height: 2.2rem;
+    font-size: 2.2rem;
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+}
+
+.logo span {
+    color: #2F9C95;
+    font-weight: 700;
+
 }
 
 /********************/
@@ -41,7 +51,7 @@
 
 .main-nav-link:hover,
 .main-nav-link:active {
-    color: #cf711f;
+    color: #257B76
 }
 
 .main-nav-link.nav-cta:link,
@@ -49,12 +59,12 @@
     padding: 1.2rem 2.4rem;
     border-radius: 9px;
     color: #fff;
-    background-color: #e67e22;
+    background-color: #2F9C95;
 }
 
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
-    background-color: #cf711f;
+    background-color: #257B76;
 }
 
 /* MOBILE */
@@ -87,7 +97,7 @@
     height: 8rem;
     padding-top: 0;
     padding-bottom: 0;
-    background-color: rgba(255, 255, 255, 0.97);
+    background-color: rgba(214, 248, 214, 0.97);
     z-index: 999;
     box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
 }
@@ -101,7 +111,7 @@
 /********************/
 
 .section-hero {
-    background-color: #fdf2e9;
+    background-color: #D6F8D6;
     padding: 4.8rem 0 9.6rem 0;
 }
 
@@ -121,8 +131,35 @@
     margin-bottom: 4.8rem;
 }
 
+.hero-img-box {
+    display: grid;
+    position: relative;
+    height: 49rem;
+}
+
 .hero-img {
     max-width: 100%;
+}
+
+.image1 {
+    position: absolute;
+    width: 45rem;
+    height: 35rem;
+
+    top: 0;
+    left: 0;
+    z-index: 2;
+    /* Layer order */
+}
+
+.image3 {
+    position: absolute;
+    width: 45rem;
+    height: 35rem;
+
+    bottom: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .delivered-meals {
@@ -141,7 +178,7 @@
     width: 4.8rem;
     border-radius: 50%;
     margin-right: -1.6rem;
-    border: 3px solid #fdf2e9;
+    border: 3px solid #D6F8D6;
 }
 
 .delivered-imgs img:last-child {
@@ -154,7 +191,7 @@
 }
 
 .delivered-text span {
-    color: #cf711f;
+    color: #0D2D2B;
     font-weight: 700;
 }
 
@@ -233,14 +270,14 @@
     /* 60% of parent's width */
     padding-bottom: 60%;
 
-    background-color: #fdf2e9;
+    background-color: #D6F8D6;
     z-index: -2;
 }
 
 .step-img-box::after {
     width: 45%;
     padding-bottom: 45%;
-    background-color: #fae5d3;
+    background-color: #BBF4BB;
     z-index: -1;
 }
 
@@ -325,7 +362,7 @@
 .meal-icon {
     height: 2.4rem;
     width: 2.4rem;
-    color: #e67e22;
+    color: #2F9C95;
 }
 
 .meal-img {
@@ -342,7 +379,7 @@
 /********************/
 
 .section-testimonials {
-    background-color: #fdf2e9;
+    background-color: #D6F8D6;
     display: grid;
     grid-template-columns: 55fr 45fr;
     align-items: center;
@@ -373,17 +410,47 @@
 
 .testimonial-name {
     font-size: 1.6rem;
-    color: #6f6f6f;
+    color: #383838;
 }
 
+/* General styles for the gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.6rem;
     padding: 1.6rem;
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .gallery-item {
+    overflow: hidden;
+    margin: 10px;
+}
+
+/* Initial styles for images */
+.gallery-item img {
+    width: 100%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+}
+
+/* Zoom in effect when in view */
+.gallery-item.in-view img {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+
+/* .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    padding: 1.6rem;
+} 
+
+ .gallery-item {
     overflow: hidden;
 }
 
@@ -391,7 +458,7 @@
     display: block;
     width: 100%;
     transition: all 0.4s;
-}
+} */
 
 .gallery-item img:hover {
     transform: scale(1.1);
@@ -412,12 +479,12 @@
 
 .pricing-plan--starter {
     justify-self: end;
-    border: 2px solid #fdf2e9;
+    border: 2px solid #D6F8D6;
     padding: 4.6rem;
 }
 
 .pricing-plan--complete {
-    background-color: #fdf2e9;
+    background-color: #D6F8D6;
     padding: 4.8rem;
     position: relative;
     overflow: hidden;
@@ -432,8 +499,8 @@
     text-transform: uppercase;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #333;
-    background-color: #ffd43b;
+    color: #F0F0F0;
+    background-color: #473800;
     padding: 0.8rem 8rem;
     transform: rotate(45deg);
 }
@@ -444,7 +511,7 @@
 }
 
 .plan-name {
-    color: #cf711f;
+    color: #2F9C95;
     font-weight: 600;
     font-size: 2rem;
     text-transform: uppercase;
@@ -455,7 +522,7 @@
 .plan-price {
     font-size: 6.2rem;
     font-weight: 600;
-    color: #333;
+    color: #383838;
     margin-bottom: 1.6rem;
 }
 
@@ -468,7 +535,7 @@
 .plan-text {
     font-size: 1.8rem;
     line-height: 1.6;
-    color: #6f6f6f;
+    color: #383838;
 }
 
 .plan-sign-up {
@@ -483,10 +550,10 @@
 }
 
 .feature-icon {
-    color: #e67e22;
+    color: #2F9C95;
     height: 2.4rem;
     width: 2.4rem;
-    background-color: #fdf2e9;
+    background-color: #D6F8D6;
     margin-bottom: 3.2rem;
     padding: 1.6rem;
     border-radius: 50%;
@@ -494,7 +561,7 @@
 
 .feature-title {
     font-size: 2.4rem;
-    color: #333;
+    color: #383838;
     font-weight: 700;
     margin-bottom: 1.6rem;
 }
@@ -520,12 +587,12 @@
     display: grid;
     /* 2/3 = 66.6% + 1/3 = 33.3% */
     grid-template-columns: 2fr 1fr;
-    /* background-color: #e67e22; */
+    background-color: #D6F8D6;
     box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
     border-radius: 11px;
     overflow: hidden;
 
-    background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+    background-image: linear-gradient(to right bottom, #D6F8D6, #D8F8ED);
 
     /* temp
     height: 50rem; */
@@ -533,11 +600,11 @@
 
 .cta-text-box {
     padding: 4.8rem 6.4rem 6.4rem 6.4rem;
-    color: #45260a;
+    color: #383838;
 }
 
 .cta .heading-secondary {
-    /* color: #45260a; */
+    color: #383838;
     color: inherit;
     margin-bottom: 3.2rem;
 }
@@ -549,7 +616,7 @@
 }
 
 .cta-img-box {
-    background-image: linear-gradient(to right bottom, rgba(235, 151, 78, 0.35), rgba(230, 125, 34, 0.35)), url(../img/eating.jpg);
+    background-image: linear-gradient(to right bottom, rgba(214, 248, 214, 0.35), rgba(216, 248, 237, 0.35)), url(../img/eating-4.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -576,13 +643,13 @@
     font-family: inherit;
     color: inherit;
     border: none;
-    background-color: #fdf2e9;
+    background-color: #fff;
     border-radius: 9px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .cta-form input::placeholder {
-    color: #aaa;
+    color: #333;
 }
 
 .cta *:focus {

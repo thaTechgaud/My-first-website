@@ -65,6 +65,11 @@ const obs = new IntersectionObserver(function (entries) {
   });
 obs.observe(sectionHeroEl);
 
+// //////////////////////////////////////////////////
+// Animating the gallery section
+
+
+
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
@@ -137,3 +142,20 @@ checkFlexGap();
   }
 }
 */
+
+// JavaScript to detect when images are in view and apply the in-view class
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    } else {
+      entry.target.classList.remove('in-view');
+    }
+  });
+}, { threshold: 0.1 });
+
+galleryItems.forEach(item => {
+  observer.observe(item);
+});
